@@ -12,8 +12,18 @@ module.exports = {
     module:{
       rules:[
           {
+              // 用正则去匹配要用该 loader 转换的 CSS 文件
               test:/\.css$/,
-              use:['style-loader','css-loader?minimize']
+              // use:['style-loader','css-loader?minimize']
+              use: [
+                  'style-loader',
+                  {
+                      loader:'css-loader',
+                      options:{
+                          minimize:true,
+                      }
+                  }
+              ]
           }
       ]
     }
