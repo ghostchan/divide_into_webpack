@@ -15,7 +15,7 @@ module.exports = {
                 // 用正则去匹配要用该 loader 转换的 CSS 文件
                 test: /\.css$/,
                 // use:['style-loader','css-loader?minimize']
-                /*use: [
+                use: [
                     'style-loader',
                     {
                         loader:'css-loader',
@@ -23,11 +23,11 @@ module.exports = {
                             minimize:true,
                         }
                     }
-                ]*/
-                use: ExtractTextPlugin.extract({
-                    // 转换 .css 文件需要使用的 Loader
-                    use: ['css-loader']
-                })
+                ]
+                // use: ExtractTextPlugin.extract({
+                //     // 转换 .css 文件需要使用的 Loader
+                //     use: ['css-loader']
+                // })
             }
         ]
     },
